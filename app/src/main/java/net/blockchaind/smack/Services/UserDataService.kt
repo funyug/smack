@@ -1,6 +1,7 @@
 package net.blockchaind.smack.Services
 
 import android.graphics.Color
+import net.blockchaind.smack.Controllers.App
 import java.util.*
 
 /**
@@ -20,9 +21,11 @@ object UserDataService {
         avatarName = ""
         email = ""
         name = ""
-        AuthService.authToken = ""
-        AuthService.userEmail = ""
-        AuthService.isLoggedIn = false
+        App.prefs.authToken = ""
+        App.prefs.userEmail = ""
+        App.prefs.isLoggedIn = false
+        MessageService.clearChannels()
+        MessageService.clearMessages()
     }
 
     fun returnAvatarColor(components: String) : Int {
